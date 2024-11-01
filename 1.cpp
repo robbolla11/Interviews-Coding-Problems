@@ -29,17 +29,17 @@ Number of days <=10^8
 #include <bits/stdc++.h>
 using namespace std;
 
-int maxProfit(vector<int> prices)  // & para usar la direccion y aumentra la vel o algo asi
+int maxProfit(vector<int> prices)  //& para usar la direccion y aumentra la vel o algo asi
 {
     int maxProfit = 0;
     int minPrice = INT_MAX; //val maximo
 
     for (int price : prices) 
     {
-        if (price < minPrice) // al hacer el chequeo, se ve si hay un valor mayor al de los dias anteriores, asi evitando comprar para perdida
+        if (price < minPrice) //comprar en el precio minimo
             minPrice = price;
         else
-            maxProfit = max(maxProfit, price - minPrice); // obtiene la max profit, precio actual - menor precio
+            maxProfit = max(maxProfit, price - minPrice); //obtiene la max profit, precio actual - menor precio
     }
     return maxProfit;
 
